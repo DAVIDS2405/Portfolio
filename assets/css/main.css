@@ -3522,7 +3522,7 @@ input, select, textarea {
 		#main input[type="button"],
 		#main button,
 		#main .button {
-			background-color: rgb(65 11 231 / 10%);
+			background-color: rgb(65 11 231 / 11%);
 			box-shadow: rgb(0, 0, 0) 0px 0px 0px 1px inset;
 			color: #020202 !important;
 		}
