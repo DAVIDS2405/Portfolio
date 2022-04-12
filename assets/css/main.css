@@ -162,7 +162,7 @@ input, select, textarea {
 		transition: color 0.2s ease, border-bottom 0.2s ease;
 		text-decoration: none;
 		border-bottom: dotted 1px;
-		color: inherit;
+		color: black;
 	}
 
 		a:hover {
@@ -178,6 +178,7 @@ input, select, textarea {
 	}
 
 	p {
+		color: #000000;
 		margin: 0 0 2em 0;
 	}
 
@@ -201,7 +202,7 @@ input, select, textarea {
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-			color: inherit;
+			color: black;
 			text-decoration: none;
 		}
 
@@ -1839,7 +1840,7 @@ input, select, textarea {
 		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		border-radius: 8px;
+		border-radius: 10px;
 		border: 0;
 		cursor: pointer;
 		display: inline-block;
@@ -1851,6 +1852,11 @@ input, select, textarea {
 		text-align: center;
 		text-decoration: none;
 		white-space: nowrap;
+	}
+
+	.button a {
+		color: #000000;
+		background-color: #000000;
 	}
 
 		input[type="submit"].icon,
@@ -1925,7 +1931,7 @@ input, select, textarea {
 	.button {
 		background-color: transparent;
 		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
-		color: #ffffff !important;
+		color: #000000 !important;
 	}
 
 		input[type="submit"]:hover,
@@ -1933,7 +1939,7 @@ input, select, textarea {
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			background-color: rgba(255, 255, 255, 0.075);
+			background-color: rgba(2, 2, 2, 0.075);
 		}
 
 		input[type="submit"]:active,
@@ -2433,6 +2439,7 @@ input, select, textarea {
 	}
 
 		ul li {
+			
 			padding-left: 0.5em;
 		}
 
@@ -2514,8 +2521,10 @@ input, select, textarea {
 			-webkit-justify-content: center;
 			-ms-justify-content: center;
 			justify-content: center;
-			width: 100%;
+			width: 40%;
+			margin-right: 100px;
 			margin-left: 0;
+			
 		}
 
 			ul.actions.special li:first-child {
@@ -2814,13 +2823,18 @@ input, select, textarea {
 		margin: 0 0 3em -2em;
 		padding: 0;
 		list-style: none;
+		
 	}
 
 		.features li {
 			width: calc(33.33333% - 2em);
 			margin-left: 2em;
 			margin-top: 3em;
+			border-color: #000000;
+			border-radius: 10px;
+			background: #5e4d9315 ;
 			padding: 0;
+			transition: 0.3s ease-in-out;
 		}
 
 			.features li:nth-child(1), .features li:nth-child(2), .features li:nth-child(3) {
@@ -3509,9 +3523,8 @@ input, select, textarea {
 		#main input[type="button"],
 		#main button,
 		#main .button {
-			background-color: transparent;
-			box-shadow: inset 0 0 0 1px #dddddd;
-			color: #636363 !important;
+			background-color: #0000006e;
+			color: #020202 !important;
 		}
 
 			#main input[type="submit"]:hover,
@@ -3960,4 +3973,4 @@ input, select, textarea {
 	}
 	
 /* Proyectos */
-	
+
