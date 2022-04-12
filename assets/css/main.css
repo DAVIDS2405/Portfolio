@@ -2829,8 +2829,14 @@ input, select, textarea {
 			margin-top: 3em;
 			border-radius: 10px;
 			background: rgba(223, 223, 223, 0);
-			box-shadow: rgb(0 0 0) 0px 0px 0px 1px inset; ;
+			box-shadow: rgb(0 0 0) 0px 0px 0px 1px inset; 
 			transition: 0.3s ease-in-out;
+			
+		}
+
+		.features li:hover {
+			transform:translateY(-10px);
+			box-shadow: 0 12px 16px 1px  rgba(0,0,0,0.2);
 		}
 
 			.features li:nth-child(1), .features li:nth-child(2), .features li:nth-child(3) {
