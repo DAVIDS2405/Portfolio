@@ -3963,7 +3963,7 @@ input, select, textarea {
 	.grid{
 		width: 100%;
 		height: 100%;
-		display:flex;
+		display:grid;
 		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 		grid-auto-rows: minmax(200px, auto);
 		gap:10px;
