@@ -2576,7 +2576,7 @@ input, select, textarea {
 				-ms-flex-direction: column;
 				flex-direction: column;
 				margin-left: 0;
-				width: 100% !important;
+				width: 98% !important;
 			}
 
 				ul.actions:not(.fixed) li {
