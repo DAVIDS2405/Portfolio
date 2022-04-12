@@ -3114,6 +3114,7 @@ input, select, textarea {
 				-ms-transition-delay: 0.5s;
 				transition-delay: 0.5s;
 				opacity: 1;
+				color: #ffffff;
 			}
 
 			#header.alt .logo {
