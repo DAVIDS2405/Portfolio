@@ -1,0 +1,29 @@
+---
+import SectionContent from "@components/SectionContent.astro";
+import Layout from "../layouts/Layout.astro";
+import Hero from "@components/Hero.astro";
+import Experience from "@components/Experience.astro";
+import Projects from "@components/Projects.astro";
+---
+
+<Layout
+  title="Porfolio de David - Desarrollador y Programador Web"
+  ,
+  description="Contrata a David para crear tu aplicación web o móvil. Desarrollador Web y Creador de Contenido. Especializado en crear aplicaciones únicas."
+>
+  <main>
+    <SectionContent class="px-4 py-8 lg:py-16 max-w-xl" id="inicio">
+      <Hero />
+    </SectionContent>
+
+    <SectionContent class="px-2 py-8 flex flex-col max-w-xl" id="experiencia">
+      <Experience />
+    </SectionContent>
+
+    <SectionContent class="px-2 py-8 flex flex-col max-w-xl" id="proyectos">
+      <Projects />
+    </SectionContent>
+
+    <SectionContent id="sobremi">sobre mi</SectionContent>
+  </main>
+</Layout>

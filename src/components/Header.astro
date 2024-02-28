@@ -1,0 +1,62 @@
+---
+import Menu from "@icons/Menu.astro";
+---
+
+<header
+  class="flex flex-col text-xs py-2 bg-black items-center justify-center top-0 lg:border-2 lg:rounded-full lg:border-white lg:flex-row lg:py-6 lg:top-1 sticky mx-auto w-full md:max-w-3xl z-50"
+>
+  <button id="menu-bar" class="flex w-full p-4 text-xl justify-end lg:hidden">
+    <Menu class="size-9" />
+  </button>
+
+  <nav
+    class="hidden bg-black absolute w-full h-dvh justify-center items-center gap-y-20 top-14 lg:top-0 lg:py-1 lg:flex lg:h-full lg:rounded-full lg:items-center lg:justify-center lg:flex-row lg:gap-x-10"
+    id="menu-open"
+  >
+    <a
+      href="#inicio"
+      class="hover:text-red-300 active:text-red-300 focus:text-red-100"
+      >Inicio</a
+    >
+    <a
+      href="#experiencia"
+      class="hover:text-red-300 active:text-red-300 focus:text-red-100"
+      >Experiencia</a
+    >
+    <a
+      href="#proyectos"
+      class="hover:text-red-300 active:text-red-300 focus:text-red-100"
+      >Proyectos</a
+    >
+    <a
+      href="#sobremi"
+      class="hover:text-red-300 active:text-red-300 focus:text-red-100"
+      >Sobre mí</a
+    >
+    <a
+      href="#contacto"
+      class="hover:text-red-300 active:text-red-300 focus:text-red-100"
+      >Contacto</a
+    >
+  </nav>
+</header>
+
+<style>
+  .menu-open-css {
+    @apply flex flex-col;
+  }
+  .menu-hidden-css {
+    @apply hidden;
+  }
+</style>
+
+<script>
+  const button = document.querySelector("#menu-bar") as Element;
+  const menuOpen = document.querySelector("#menu-open") as Element;
+  button.addEventListener("click", () => {
+    menuOpen.classList.toggle("menu-open-css");
+  });
+  menuOpen.addEventListener("click", () => {
+    menuOpen.classList.remove("menu-open-css");
+  });
+</script>

@@ -1,0 +1,52 @@
+---
+import Mail from "@icons/Mail.astro";
+import Badge from "./Badge.astro";
+import LinkedIn from "@icons/LinkedIn.astro";
+import { Image } from "astro:assets";
+import GitHub from "@icons/GitHub.astro";
+---
+
+<div class="flex items-center gap-4 mb-4">
+  <Image
+    src="https://avatars.githubusercontent.com/u/85196670?v=4"
+    class="size-20 rounded-full"
+    alt="David Foto"
+    loading="eager"
+    width="200"
+    height="150"
+  />
+  <div class="flex flex-col items-center">
+    <a
+      href="https://www.linkedin.com/in/david-sebastian-basantes-lucero-40bb97216/"
+      target="_blank"
+      class="mb-2"
+    >
+      <Badge>Disponible para trabajar</Badge>
+    </a>
+    <nav class="flex flex-wrap items-start w-full gap-x-4">
+      <a
+        href="mailto:sebastian2405lucero@hotmail.com"
+        target="_blank"
+        class="flex flex-row items-center gap-x-3 justify-center border rounded-full p-2 border-gray-600"
+      >
+        <Mail class="size-6" />
+      </a>
+      <a
+        href="https://github.com/DAVIDS2405"
+        target="_blank"
+        class="flex flex-row items-center gap-x-3 justify-center border rounded-full p-2 border-gray-600"
+      >
+        <GitHub class="size-6" />
+      </a>
+    </nav>
+  </div>
+</div>
+
+<h1 class="text-lg mb-4">Hey, Soy David</h1>
+<h2 class="text-sm text-balance">
+  1 año de experiencia.
+  <span class="text-red-300">
+    Desarrollador de Software y Creador de Contenido sobre Programación
+  </span>
+  de Quito, Ecuador. Especializado en el desarrollo de aplicaciones web únicas.
+</h2>

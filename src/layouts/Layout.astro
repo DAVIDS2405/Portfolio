@@ -1,0 +1,47 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+import "@fontsource/press-start-2p";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <Footer />
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    color-scheme: light dark;
+    cursor: url("../cursor.png"), default;
+  }
+  html {
+    font-family: "Press Start 2P", system-ui;
+    scroll-behavior: smooth;
+  }
+  body {
+    background: #050505;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+  }
+  body a {
+    @apply cursor-[url(./cursor-click.png),_pointer];
+  }
+</style>

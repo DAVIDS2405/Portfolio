@@ -1,0 +1,37 @@
+---
+import BriefCase from "@icons/BriefCase.astro";
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE_TIME_LINE = [
+  {
+    date: "Actualmente...",
+    title: "Intern FullStack Developer",
+    company: "Sovos",
+
+    description:
+      "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
+  },
+  {
+    date: "2022",
+    title: "Inter FullStack Developer",
+    company: "EmpireSystemSA",
+
+    description:
+      "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
+  },
+];
+---
+
+<div class="flex flex-row gap-x-4 items-center mb-5">
+  <BriefCase class="size-10" />
+  <h2>Experiencia Laboral</h2>
+</div>
+<ol class="relative ml-4 px-6 border-s border-gray-100">
+  {
+    EXPERIENCE_TIME_LINE.map((experience) => (
+      <li>
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
