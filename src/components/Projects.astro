@@ -8,6 +8,7 @@ import Surrealdb from "@icons/Surrealdb.astro";
 import LinkButton from "./LinkButton.astro";
 import Link from "@icons/Link.astro";
 import Fly from "@icons/Fly.astro";
+import { Image } from "astro:assets";
 
 const TAGS = {
   FASTAPI: {
@@ -33,7 +34,7 @@ const IMPORTAN_PROJECTS = [
   {
     title: "Saturnina E-commerce Backend",
     github: "https://github.com/DAVIDS2405/Saturnina",
-    img: "./ApiSaturnina.jpg",
+    img: "/ApiSaturnina.jpg",
     link: "https://api-saturnina.1.us-1.fl0.io/",
     tags: [TAGS.FASTAPI, TAGS.FLYIO, TAGS.SURREAL],
     description:
@@ -42,7 +43,7 @@ const IMPORTAN_PROJECTS = [
 
   {
     title: "Dec5 Digital Sing",
-    img: "./dec5.jpg",
+    img: "/dec5.jpg",
     link: "https://5dev.dec.cl/",
     tags: [TAGS.PHP, TAGS.AWS],
     description:
@@ -62,34 +63,36 @@ const IMPORTAN_PROJECTS = [
       <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
         <div class="w-full  md:w-1/2">
           <div class="relative flex flex-col col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-            <img
+            <Image
               alt="Imagen proyectos"
               class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-              loading="lazy"
+              loading="eager"
+              height="250"
+              width="250"
               src={project.img}
             />
           </div>
         </div>
 
         <div class="w-full md:w-1/2 md:max-w-lg">
-          <h3 class="text-xl text-gray-800 dark:text-gray-100">
+          <h3 class="text-sm text-gray-800 dark:text-gray-100">
             {project.title}
           </h3>
           <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-row mb-2 gap-x-2 gap-y-2">
+            <ul class="flex flex-wrap flex-row mb-2 gap-x-2 gap-y-2">
               {project.tags.map((tag) => (
                 <li>
                   <span
                     class={`flex items-center justify-center gap-x-2 rounded-full  ${tag.class} py-1 px-2 `}
                   >
-                    <tag.icon class="size-6" />
+                    <tag.icon class="size-5" />
                     {tag.name}
                   </span>
                 </li>
               ))}
             </ul>
 
-            <div class="mt-2 text-gray-700 text-sm dark:text-gray-400">
+            <div class="mt-2 text-gray-700 text-xs dark:text-gray-400">
               {project.description}
             </div>
             <footer class="flex items-end justify-start mt-4 gap-x-4">
