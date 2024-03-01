@@ -41,7 +41,7 @@ const { title, description } = Astro.props;
     flex-direction: column;
     min-height: 100dvh;
   }
-  body {
-    cursor: url("../cursor-click.png");
+  body a {
+    @apply cursor-[url(./cursor_click.png),_pointer];
   }
 </style>
