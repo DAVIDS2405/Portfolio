@@ -20,7 +20,7 @@ import Menu from "@icons/Menu.astro";
     >
     <a
       href="#experiencia"
-      class="hover:text-red-300 active:text-red-300 focus:text-red-100"
+      class="transition hover:text-red-300 active:text-red-300 focus:text-red-100"
       >Experiencia</a
     >
     <a
@@ -34,7 +34,7 @@ import Menu from "@icons/Menu.astro";
       >Sobre mí</a
     >
     <a
-      href="#contacto"
+      href="mailto:sebastian2405lucero@hotmail.com"
       class="hover:text-red-300 active:text-red-300 focus:text-red-100"
       >Contacto</a
     >
@@ -48,15 +48,39 @@ import Menu from "@icons/Menu.astro";
   .menu-hidden-css {
     @apply hidden;
   }
+  .text-color-new {
+    @apply text-red-300;
+  }
 </style>
 
 <script>
   const button = document.querySelector("#menu-bar") as Element;
   const menuOpen = document.querySelector("#menu-open") as Element;
+  const enlaces = document.querySelectorAll("#menu-open a");
+
   button.addEventListener("click", () => {
     menuOpen.classList.toggle("menu-open-css");
   });
   menuOpen.addEventListener("click", () => {
     menuOpen.classList.remove("menu-open-css");
+  });
+  let enlaceAnterior: Element | null = null; // Almacena el enlace anterior
+
+  enlaces.forEach((enlace) => {
+    enlace.addEventListener("click", () => {
+      console.log(enlaceAnterior);
+
+      // Verificar si se ha cambiado de un enlace a otro
+      if (enlace !== enlaceAnterior) {
+        // Si es un nuevo enlace, quitar la clase del enlace anterior
+        if (enlaceAnterior !== null) {
+          enlaceAnterior.classList.remove("text-color-new");
+        }
+        // Aplicar la clase al enlace actual
+        enlace.classList.add("text-color-new");
+        // Actualizar el enlace anterior
+        enlaceAnterior = enlace;
+      }
+    });
   });
 </script>

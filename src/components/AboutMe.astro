@@ -1,0 +1,42 @@
+---
+import Person from "@icons/Person.astro";
+import { Image } from "astro:assets";
+---
+
+<div class="flex mb-4 gap-x-4 items-center">
+  <Person class="size-8" />
+  <h1>Sobre Mi</h1>
+</div>
+
+<div class="flex flex-row gap-x-10 items-center">
+  <div class="flex flex-col text-xs gap-y-4">
+    <p>
+      Me llamo David Basantes pero mis amigos me llaman David. Empecé en la
+      programación cuando entre a la universidad, tenía 18 años. Actualmente
+      estoy <span class="text-red-300"
+        >trabajando con equipos de desarrollo en multinacionales.</span
+      >
+    </p>
+    <p>
+      Algunos de mis éxitos incluyen colaborar con Sovos para <span
+        class="text-red-300"
+        >mejorar el desarrollo de las primeras apps en su sistema.</span
+      >
+    </p>
+    <p>
+      Como creador de contenido, <span class="text-red-300"
+        >cuento con el canal de TikTok. Mi objetivo es enseñar la comunidad
+        hispana sobre este mundo y el acceso a contenido de calidad.</span
+      >
+    </p>
+  </div>
+
+  <Image
+    width="200"
+    height="200"
+    src="https://avatars.githubusercontent.com/u/85196670?v=4"
+    alt="Miguel Ángel"
+    class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20"
+    style="object-position: 50% 50%"
+  />
+</div>
