@@ -29,7 +29,9 @@ const { date, title, description, company, link } = Astro.props;
     >
   </div>
   <div class="flex flex-col items-center">
-    <p class="mb-4 text-[0.70rem] text-pretty text-gray-500 dark:text-gray-300">
+    <p
+      class="mb-4 text-[0.70rem] text-pretty max-w-6xl text-gray-500 dark:text-gray-300"
+    >
       {description}
     </p>
     {
