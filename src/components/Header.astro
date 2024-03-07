@@ -39,7 +39,8 @@ import Menu from "@icons/Menu.astro";
   const button = document.querySelector("#menu-bar") as Element;
   const menuOpen = document.querySelector("#menu-open") as Element;
   const enlaces = document.querySelectorAll("#menu-open a");
-
+  let navenlaces = document.querySelectorAll("header nav a");
+  let secciones = document.querySelectorAll("section");
   button.addEventListener("click", () => {
     menuOpen.classList.toggle("menu-open-css");
   });
@@ -48,25 +49,21 @@ import Menu from "@icons/Menu.astro";
     menuOpen.classList.remove("menu-open-css");
   });
 
-  function cambiarColorEnlaces() {
-    const viewportHeight = window.innerHeight;
-    const enlaces = document.querySelectorAll("a");
-    const secciones = document.querySelectorAll("section");
-
+  window.onscroll = () => {
     secciones.forEach((seccion) => {
-      const rect = seccion.getBoundingClientRect();
-      if (rect.top < viewportHeight / 5 && rect.bottom > viewportHeight / 5) {
-        // La sección está en la mitad de la ventana gráfica
-        enlaces.forEach((enlace) => {
+      let top = window.scrollY;
+      let offset = seccion.offsetTop - 150;
+      let height = seccion.offsetHeight;
+      let id = seccion.getAttribute("id");
+
+      if (top >= offset && top < offset + height) {
+        navenlaces.forEach((enlace) => {
           enlace.classList.remove("text-color-new");
+          document
+            .querySelector("header nav a[href*=" + id + "]")
+            ?.classList.add("text-color-new");
         });
-        const enlaceCorrespondiente = document.querySelector(
-          `a[href="#${seccion.id}"]`
-        );
-        enlaceCorrespondiente?.classList.add("text-color-new");
       }
     });
-  }
-
-  window.addEventListener("scroll", cambiarColorEnlaces);
+  };
 </script>
