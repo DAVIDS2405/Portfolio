@@ -13,29 +13,11 @@ import Menu from "@icons/Menu.astro";
     class="hidden bg-black absolute w-full h-dvh justify-center items-center gap-y-20 top-14 lg:top-0 lg:py-1 lg:flex lg:h-full lg:rounded-full lg:items-center lg:justify-center lg:flex-row lg:gap-x-10"
     id="menu-open"
   >
-    <a
-      href="#inicio"
-      class="hover:text-red-300 active:text-red-300 focus:text-red-100"
-      >Inicio</a
-    >
-    <a
-      href="#experiencia"
-      class="transition hover:text-red-300 active:text-red-300 focus:text-red-100"
-      >Experiencia</a
-    >
-    <a
-      href="#proyectos"
-      class="hover:text-red-300 active:text-red-300 focus:text-red-100"
-      >Proyectos</a
-    >
-    <a
-      href="#sobremi"
-      class="hover:text-red-300 active:text-red-300 focus:text-red-100"
-      >Sobre mí</a
-    >
-    <a
-      href="mailto:sebastian2405lucero@hotmail.com"
-      class="hover:text-red-300 active:text-red-300 focus:text-red-100"
+    <a href="#inicio" class="hover:text-red-300">Inicio</a>
+    <a href="#experiencia" class="transition hover:text-red-300">Experiencia</a>
+    <a href="#proyectos" class="hover:text-red-300">Proyectos</a>
+    <a href="#sobremi" class="hover:text-red-300">Sobre mí</a>
+    <a href="mailto:sebastian2405lucero@hotmail.com" class="hover:text-red-300"
       >Contacto</a
     >
   </nav>
@@ -57,19 +39,20 @@ import Menu from "@icons/Menu.astro";
   const button = document.querySelector("#menu-bar") as Element;
   const menuOpen = document.querySelector("#menu-open") as Element;
   const enlaces = document.querySelectorAll("#menu-open a");
+  let enlaceAnterior: Element | null = null; // Almacena el enlace anterior
 
   button.addEventListener("click", () => {
     menuOpen.classList.toggle("menu-open-css");
   });
+
   menuOpen.addEventListener("click", () => {
     menuOpen.classList.remove("menu-open-css");
   });
-  let enlaceAnterior: Element | null = null; // Almacena el enlace anterior
+
+  // Escuchar el evento de desplazamiento
 
   enlaces.forEach((enlace) => {
     enlace.addEventListener("click", () => {
-      console.log(enlaceAnterior);
-
       // Verificar si se ha cambiado de un enlace a otro
       if (enlace !== enlaceAnterior) {
         // Si es un nuevo enlace, quitar la clase del enlace anterior
@@ -83,4 +66,27 @@ import Menu from "@icons/Menu.astro";
       }
     });
   });
+
+  function cambiarColorEnlaces() {
+    const viewportHeight = window.innerHeight;
+    const scrollPosition = window.scrollY;
+    const enlaces = document.querySelectorAll("a");
+    const secciones = document.querySelectorAll("section");
+
+    secciones.forEach((seccion) => {
+      const rect = seccion.getBoundingClientRect();
+      if (rect.top < viewportHeight / 5 && rect.bottom > viewportHeight / 5) {
+        // La sección está en la mitad de la ventana gráfica
+        enlaces.forEach((enlace) => {
+          enlace.classList.remove("text-color-new");
+        });
+        const enlaceCorrespondiente = document.querySelector(
+          `a[href="#${seccion.id}"]`
+        );
+        enlaceCorrespondiente?.classList.add("text-color-new");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", cambiarColorEnlaces);
 </script>
