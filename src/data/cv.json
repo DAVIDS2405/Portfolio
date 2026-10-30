@@ -1,0 +1,176 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "David Sebastián Basantes Lucero",
+    "label": "Desarrollador Full-Stack y Arquitecto de Software",
+    "image": "https://avatars.githubusercontent.com/u/85196670?v=4",
+    "photo": "",
+    "email": "david2405lucero@gmail.com",
+    "phone": "(+593) 990095964",
+    "url": "https://github.com/DAVIDS2405",
+    "summary": "Desarrollador Full-Stack y Arquitecto de Software con 3+ años de experiencia diseñando, implementando y liderando proyectos full-stack. Especializado en arquitectura limpia, patrones de diseño y servicios cloud (AWS), llevando productos desde la conceptualización hasta producción en escala enterprise.",
+    "location": {
+      "city": "Quito",
+      "countryCode": "EC"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "davids-dev",
+        "url": "https://www.linkedin.com/in/davids-dev/"
+      },
+      {
+        "network": "GitHub",
+        "username": "DAVIDS2405",
+        "url": "https://github.com/DAVIDS2405"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Sovos",
+      "position": "Desarrollador Full-Stack — Document Manager & Remote ID Verification",
+      "url": "",
+      "startDate": "2023-05",
+      "endDate": "",
+      "summary": "Desarrollo frontend y backend para los equipos de Document Manager y Remote ID Verification, aportando mejoras como la implementación de webhooks y trabajando en un código escalable y sostenible.",
+      "links": [
+        {
+          "label": "Portal de escritorio DEC5",
+          "url": "https://sovos.com/es/nuevos-subdominios-portal-escritorio-dec/"
+        },
+        {
+          "label": "Verificación de identidad",
+          "url": "https://sovos.com/es/iva/productos/verificacion-de-identidad-de-sovos/"
+        }
+      ],
+      "highlights": [
+        "Desarrollé el proyecto SSA Delivery API, facilitando la verificación de identidad con biometría facial y firma digital de documentos para integración con WhatsApp, usado en procesos de verificación de alto valor.",
+        "Monitoreo y observabilidad con Grafana y AWS CloudWatch para 2+ aplicaciones, permitiendo detección proactiva de incidentes y análisis de rendimiento en tiempo real.",
+        "Documentación técnica integral, revisión de código y mentoría en buenas prácticas de IA para garantizar la calidad en todos los proyectos asignados."
+      ]
+    },
+    {
+      "name": "KENTE",
+      "position": "Desarrollador Full-Stack & Architect — Gestión de Peluquerías Caninas",
+      "url": "https://ruffoapp.com/",
+      "startDate": "2026-03",
+      "endDate": "",
+      "summary": "Diseñé e implementé la arquitectura completa del backend para una plataforma de gestión de peluquerías caninas, definiendo patrones de diseño y una estructura de base de datos escalable.",
+      "highlights": [
+        "Análisis de datos y generación de estadísticas de uso de la plataforma para informar decisiones de producto y mejoras de UX.",
+        "Refactorizaciones estructurales y optimización de infraestructura, mejorando el performance y preparando la plataforma para escalar."
+      ]
+    },
+    {
+      "name": "Gomiguide",
+      "position": "Founder & Desarrollador Frontend",
+      "url": "https://gomiguide.com/",
+      "startDate": "2026-01",
+      "endDate": "",
+      "summary": "Parte del equipo fundador: desarrollé Gomiguide, una plataforma de turismo local que permite a los usuarios crear y explorar puntos de interés geográfico en cualquier parte del mundo.",
+      "highlights": [
+        "Implementé mapas basados en tecnología open source (OpenStreetMap), permitiendo la creación intuitiva de puntos y zonas de interés personalizadas.",
+        "Definí la arquitectura frontend modular aplicando patrones de diseño y buenas prácticas de React/JavaScript, facilitando el mantenimiento y la extensibilidad.",
+        "Establecí estándares de revisión de código y documentación técnica para garantizar la calidad del software desde la fase inicial."
+      ]
+    },
+    {
+      "name": "EmpireSystemSA",
+      "position": "Intern Full-Stack Developer",
+      "url": "",
+      "startDate": "2022",
+      "endDate": "2022",
+      "summary": "Creé páginas web para inversión con criptomonedas, además de aplicaciones de escritorio ERP para tiendas en el Ecuador.",
+      "links": [
+        {
+          "label": "POS — Facturación electrónica",
+          "url": "https://empiresystemsa.com/pos-software-de-facturacion-electronica/"
+        }
+      ],
+      "highlights": []
+    }
+  ],
+  "education": [
+    {
+      "institution": "Escuela Politécnica Nacional",
+      "area": "Desarrollo de Software",
+      "studyType": "Tecnólogo Superior",
+      "startDate": "",
+      "endDate": "",
+      "score": "",
+      "courses": []
+    }
+  ],
+  "skills": [
+    {
+      "name": "Lenguajes de programación",
+      "level": "",
+      "keywords": ["JavaScript (React, Node.js)", "Go", "Python", "PHP"]
+    },
+    {
+      "name": "Cloud & Infraestructura",
+      "level": "",
+      "keywords": [
+        "AWS (EC2, S3, CloudWatch)",
+        "DigitalOcean (Droplets)",
+        "Docker",
+        "Grafana",
+        "CI/CD"
+      ]
+    },
+    {
+      "name": "Metodologías & Patrones",
+      "level": "",
+      "keywords": [
+        "Arquitectura Limpia",
+        "Patrones de diseño (SOLID, Singleton, Factory)",
+        "Análisis de datos"
+      ]
+    },
+    {
+      "name": "Competencias transversales",
+      "level": "",
+      "keywords": [
+        "Ciberseguridad",
+        "Inteligencia Artificial",
+        "Liderazgo Técnico",
+        "Revisión de Código"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Ruffo",
+      "description": "Plataforma de gestión para peluquerías caninas: agenda, clientes y estadísticas de uso.",
+      "url": "https://ruffoapp.com/",
+      "repository": "",
+      "image": "/ruffo.jpg",
+      "keywords": ["Next.js", "Supabase", "DigitalOcean"]
+    },
+    {
+      "name": "Saturnina E-commerce Backend",
+      "description": "Backend para la tienda Saturnina de Quito, Ecuador, especializada en personalización de ropa.",
+      "url": "",
+      "repository": "https://github.com/DAVIDS2405/Saturnina",
+      "image": "/ApiSaturnina.jpg",
+      "keywords": ["FastAPI", "Fly.io", "SurrealDB"]
+    },
+    {
+      "name": "Dec5 Digital Sign",
+      "description": "Plataforma para firma de documentos de manera digital para cualquier tipo de empresa.",
+      "url": "https://5.dec.cl/",
+      "repository": "",
+      "image": "/dec5.jpg",
+      "keywords": ["PHP", "AWS"]
+    },
+    {
+      "name": "Gomiguide",
+      "description": "Plataforma para conectar y ser parte del mundo sin sentirte turista.",
+      "url": "https://gomiguide.com/",
+      "repository": "",
+      "image": "/gomiguide.jpg",
+      "keywords": ["Next.js", "Node", "Express"]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+---
+import { Image } from "astro:assets";
+import { photoUrl } from "@lib/cv";
+
+interface Props {
+  alt: string;
+  class?: string;
+  width?: number;
+  height?: number;
+  loading?: "eager" | "lazy";
+  style?: string;
+}
+
+const {
+  alt,
+  class: className,
+  width = 200,
+  height = 200,
+  loading = "lazy",
+  style,
+} = Astro.props;
+
+const src = photoUrl();
+// Si la foto vive en /public se usa tal cual; si es una URL remota se optimiza.
+const isLocalFile = src.startsWith("/");
+---
+
+{
+  isLocalFile ? (
+    <img
+      src={src}
+      width={width}
+      height={height}
+      alt={alt}
+      loading={loading}
+      class={className}
+      style={style}
+    />
+  ) : (
+    <Image
+      src={src}
+      width={width}
+      height={height}
+      alt={alt}
+      loading={loading}
+      class={className}
+      style={style}
+    />
+  )
+}

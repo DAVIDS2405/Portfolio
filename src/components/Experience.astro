@@ -1,25 +1,7 @@
 ---
 import BriefCase from "@icons/BriefCase.astro";
 import ExperienceItem from "./ExperienceItem.astro";
-
-const EXPERIENCE_TIME_LINE = [
-  {
-    date: "Actualmente...",
-    title: "Intern FullStack Developer",
-    company: "Sovos",
-
-    description:
-      "Desarrollo de la aplicación de dec5 doy soporte técnico y ayudo con una nueva arquitectura para utilizar el backend",
-  },
-  {
-    date: "2022",
-    title: "Inter FullStack Developer",
-    company: "EmpireSystemSA",
-
-    description:
-      "Cree paginas web para inversion con criptomonedas ademas de aplicaciones de escrito ERP para tiendas en el Ecuador",
-  },
-];
+import { cv, formatRange } from "@lib/cv";
 ---
 
 <div class="flex flex-row gap-x-4 items-center mb-5">
@@ -28,9 +10,16 @@ const EXPERIENCE_TIME_LINE = [
 </div>
 <ol class="relative ml-4 px-6 border-s border-gray-100">
   {
-    EXPERIENCE_TIME_LINE.map((experience) => (
+    cv.work.map((job) => (
       <li>
-        <ExperienceItem {...experience} />
+        <ExperienceItem
+          date={formatRange(job.startDate, job.endDate)}
+          title={job.position}
+          company={job.name}
+          description={job.summary ?? ""}
+          link={job.url || undefined}
+          links={job.links}
+        />
       </li>
     ))
   }

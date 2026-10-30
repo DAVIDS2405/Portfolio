@@ -1,6 +1,6 @@
 ---
 import Person from "@icons/Person.astro";
-import { Image } from "astro:assets";
+import Avatar from "./Avatar.astro";
 ---
 
 <div class="flex mb-4 gap-x-4 items-center">
@@ -32,11 +32,10 @@ import { Image } from "astro:assets";
     </p>
   </div>
 
-  <Image
-    width="200"
-    height="200"
-    src="https://avatars.githubusercontent.com/u/85196670?v=4"
-    alt="Miguel Ángel"
+  <Avatar
+    width={200}
+    height={200}
+    alt="Foto de David Basantes"
     class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20"
     style="object-position: 50% 50%"
   />

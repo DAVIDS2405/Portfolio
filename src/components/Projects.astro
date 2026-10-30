@@ -1,68 +1,90 @@
 ---
 import AWS from "@icons/AWS.astro";
+import AstroIcon from "@icons/AstroIcon.astro";
+import Angular from "@icons/Angular.astro";
+import Android from "@icons/Android.astro";
 import BrandTabler from "@icons/BrandTabler.astro";
+import Cpp from "@icons/C++.astro";
+import Docker from "@icons/Docker.astro";
+import DigitalOcean from "@icons/DigitalOcean.astro";
+import Express from "@icons/Express.astro";
 import FastAPI from "@icons/FastAPI.astro";
-import GitHub from "@icons/GitHub.astro";
-import Php from "@icons/Php.astro";
-import Nextjs from "@icons/Nextjs.astro"
-import Node from "@icons/Node.astro"
-import Express from "@icons/Express.astro"
-import Surrealdb from "@icons/Surrealdb.astro";
-import LinkButton from "./LinkButton.astro";
-import Link from "@icons/Link.astro";
+import Firebase from "@icons/Firebase.astro";
+import Flutter from "@icons/Flutter.astro";
 import Fly from "@icons/Fly.astro";
+import Godot from "@icons/Godot.astro";
+import Hono from "@icons/Hono.astro";
+import Java from "@icons/Java.astro";
+import Kotlin from "@icons/Kotlin.astro";
+import Laravel from "@icons/Larabel.astro";
+import MongoDB from "@icons/MongoDB.astro";
+import Nextjs from "@icons/Nextjs.astro";
+import Node from "@icons/Node.astro";
+import Php from "@icons/Php.astro";
+import PostgreSQL from "@icons/PostgreSQL.astro";
+import React from "@icons/React.astro";
+import Spring from "@icons/Spring.astro";
+import Supabase from "@icons/Supabase.astro";
+import Surrealdb from "@icons/Surrealdb.astro";
+import Tailwind from "@icons/Tailwind.astro";
+import Vercel from "@icons/Vercel.astro";
+import Vite from "@icons/Vite.astro";
+import GitHub from "@icons/GitHub.astro";
+import Link from "@icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
 import { Image } from "astro:assets";
+import { cv } from "@lib/cv";
 
-const TAGS = {
-  FASTAPI: {
-    name: "FastAPI",
-    class: "bg-green-400 text-white text-xs",
-    icon: FastAPI,
-  },
-  FLYIO: {
-    name: "Fly.io",
-    class: "bg-purple-400 text-white text-xs",
-    icon: Fly,
-  },
-  SURREAL: {
-    name: "SurrealDB",
-    class: "bg-purple-300 text-white text-xs",
-    icon: Surrealdb,
-  },
-  PHP: { name: "PHP", class: "bg-gray-400 text-white text-xs", icon: Php },
-  AWS: { name: "AWS", class: "bg-amber-400 text-white text-xs", icon: AWS },
-  NEXTJS: { name: "NextJS", class: "bg-gray-400 text-white text-xs", icon: Nextjs },
-  NODE: { name: "Node", class: "bg-gray-400 text-white text-xs", icon: Node },
-  EXPRESS: { name: "Express", class: "bg-gray-400 text-white text-xs", icon: Express },
+/**
+ * Registro de tecnologías: nombre normalizado -> icono + color del badge.
+ * Las claves se normalizan (minúsculas, sin puntos/guiones/espacios), así
+ * "Next.js", "next-js" y "NEXTJS" caen en la misma entrada.
+ */
+const TAGS: Record<string, { name: string; class: string; icon: any }> = {
+  fastapi: { name: "FastAPI", class: "bg-green-400 text-white text-xs", icon: FastAPI },
+  flyio: { name: "Fly.io", class: "bg-[#C084FC] text-gray-900 text-xs", icon: Fly },
+  surrealdb: { name: "SurrealDB", class: "bg-[#C084FC] text-gray-900 text-xs", icon: Surrealdb },
+  php: { name: "PHP", class: "bg-gray-400 text-white text-xs", icon: Php },
+  aws: { name: "AWS", class: "bg-amber-400 text-white text-xs", icon: AWS },
+  nextjs: { name: "Next.js", class: "bg-gray-400 text-white text-xs", icon: Nextjs },
+  node: { name: "Node", class: "bg-gray-400 text-white text-xs", icon: Node },
+  express: { name: "Express", class: "bg-gray-400 text-white text-xs", icon: Express },
+  react: { name: "React", class: "bg-cyan-400 text-white text-xs", icon: React },
+  docker: { name: "Docker", class: "bg-sky-400 text-white text-xs", icon: Docker },
+  digitalocean: { name: "DigitalOcean", class: "bg-blue-500 text-white text-xs", icon: DigitalOcean },
+  postgresql: { name: "PostgreSQL", class: "bg-blue-400 text-white text-xs", icon: PostgreSQL },
+  mongodb: { name: "MongoDB", class: "bg-green-500 text-white text-xs", icon: MongoDB },
+  supabase: { name: "Supabase", class: "bg-emerald-400 text-white text-xs", icon: Supabase },
+  firebase: { name: "Firebase", class: "bg-amber-500 text-white text-xs", icon: Firebase },
+  java: { name: "Java", class: "bg-red-400 text-white text-xs", icon: Java },
+  kotlin: { name: "Kotlin", class: "bg-violet-400 text-white text-xs", icon: Kotlin },
+  flutter: { name: "Flutter", class: "bg-sky-500 text-white text-xs", icon: Flutter },
+  angular: { name: "Angular", class: "bg-red-500 text-white text-xs", icon: Angular },
+  android: { name: "Android", class: "bg-lime-500 text-white text-xs", icon: Android },
+  astro: { name: "Astro", class: "bg-orange-400 text-white text-xs", icon: AstroIcon },
+  vite: { name: "Vite", class: "bg-violet-500 text-white text-xs", icon: Vite },
+  vercel: { name: "Vercel", class: "bg-gray-700 text-white text-xs", icon: Vercel },
+  tailwind: { name: "Tailwind", class: "bg-cyan-500 text-white text-xs", icon: Tailwind },
+  spring: { name: "Spring", class: "bg-green-600 text-white text-xs", icon: Spring },
+  laravel: { name: "Laravel", class: "bg-red-500 text-white text-xs", icon: Laravel },
+  godot: { name: "Godot", class: "bg-blue-500 text-white text-xs", icon: Godot },
+  hono: { name: "Hono", class: "bg-orange-500 text-white text-xs", icon: Hono },
+  "c++": { name: "C++", class: "bg-blue-600 text-white text-xs", icon: Cpp },
 };
 
-const IMPORTAN_PROJECTS = [
-  {
-    title: "Saturnina E-commerce Backend",
-    github: "https://github.com/DAVIDS2405/Saturnina",
-    img: "/ApiSaturnina.jpg",
-    tags: [TAGS.FASTAPI, TAGS.FLYIO, TAGS.SURREAL],
-    description:
-      "Backend para la tienda Saturnina de Quito, Ecuador especializada en personalización de ropa",
-  },
+const normalize = (value: string) => value.toLowerCase().replace(/[.\s_-]/g, "");
 
-  {
-    title: "Dec5 Digital Sign",
-    img: "/dec5.jpg",
-    link: "https://5.dec.cl/",
-    tags: [TAGS.PHP, TAGS.AWS],
-    description:
-      "Plataforma para firma de documentos de manera digital para cualquier tipo de empresa",
-  },
-  {
-    title: "Gommiguide",
-    img: "/gomiguide.png",
-    link: "https://gomiguide.com/",
-    tags: [TAGS.NEXTJS, TAGS.NODE, TAGS.EXPRESS],
-    description:
-      "Plataforma para conectarte y ser parte del mundo sin sentirte turista",
-  }
-];
+function resolveTag(keyword: string) {
+  return (
+    TAGS[normalize(keyword)] ?? {
+      name: keyword,
+      class: "bg-gray-500 text-white text-xs",
+      icon: null,
+    }
+  );
+}
+
+const projects = cv.projects;
 ---
 
 <div class="flex flex-row gap-x-4 items-center mb-5">
@@ -72,51 +94,60 @@ const IMPORTAN_PROJECTS = [
 
 <div class="flex flex-col gap-y-16">
   {
-    IMPORTAN_PROJECTS.map((project) => (
+    projects.map((project) => (
       <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
         <div class="w-full  md:w-1/2">
           <div class="relative flex flex-col col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-            <Image
-              alt="Imagen proyectos"
-              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-              loading="eager"
-              height="250"
-              width="250"
-              src={project.img}
-            />
+            {project.image ? (
+              <Image
+                alt={`Imagen de ${project.name}`}
+                class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                loading="eager"
+                height="250"
+                width="250"
+                src={project.image}
+              />
+            ) : (
+              <div class="flex items-center justify-center w-full h-56 transition duration-500 md:scale-110 md:group-hover:scale-105 bg-gradient-to-br from-gray-800 via-gray-900 to-black">
+                <span class="text-lg text-gray-400">{project.name}</span>
+              </div>
+            )}
           </div>
         </div>
 
         <div class="w-full md:w-1/2 md:max-w-lg">
           <h3 class="text-sm text-gray-800 dark:text-gray-100">
-            {project.title}
+            {project.name}
           </h3>
           <div class="flex flex-wrap mt-2">
             <ul class="flex flex-wrap flex-row mb-2 gap-x-2 gap-y-2">
-              {project.tags.map((tag) => (
-                <li>
-                  <span
-                    class={`flex items-center justify-center gap-x-2 rounded-full  ${tag.class} py-1 px-2 `}
-                  >
-                    <tag.icon class="size-5" />
-                    {tag.name}
-                  </span>
-                </li>
-              ))}
+              {(project.keywords ?? []).map((keyword) => {
+                const tag = resolveTag(keyword);
+                return (
+                  <li>
+                    <span
+                      class={`flex items-center justify-center gap-x-2 rounded-full ${tag.class} py-1 px-2`}
+                    >
+                      {tag.icon && <tag.icon class="size-5 shrink-0" />}
+                      {tag.name}
+                    </span>
+                  </li>
+                );
+              })}
             </ul>
 
             <div class="mt-2 text-gray-700 text-xs dark:text-gray-400">
               {project.description}
             </div>
             <footer class="flex items-end justify-start mt-4 gap-x-4">
-              {project.github && (
-                <LinkButton href={project.github}>
+              {project.repository && (
+                <LinkButton href={project.repository}>
                   <GitHub class="size-5" />
                   Code
                 </LinkButton>
               )}
-              {project.link && (
-                <LinkButton href={project.link}>
+              {project.url && (
+                <LinkButton href={project.url}>
                   <Link class="size-4" />
                   Preview
                 </LinkButton>
